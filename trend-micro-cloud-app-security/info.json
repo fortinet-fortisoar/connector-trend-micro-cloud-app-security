@@ -569,8 +569,8 @@
           "description": "Provider of the protected service.",
           "name": "account_provider",
           "options": [
-            "office365",
-            "google"
+            "Office 365",
+            "Google"
           ]
         },
         {
@@ -837,7 +837,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "A csv of sending email addresses",
+          "description": "Specify comma separated values of senders email addresses",
+          "tooltip": "Specify comma separated values of senders email addresses",
           "name": "senders"
         },
         {
@@ -846,7 +847,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "A csv of URLs included in email messages",
+          "description": "Specify comma separated values of URLs included in email messages",
+          "tooltip": "Specify comma separated values of URLs included in email messages",
           "name": "urls"
         },
         {
@@ -855,7 +857,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "A csv of SHA-1 hash values of email attachments",
+          "description": "Specify comma separated SHA-1 hash values of email attachments",
+          "tooltip": "Specify comma separated SHA-1 hash values of email attachments",
           "name": "filehashes"
         },
         {
@@ -864,7 +867,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "A csv of SHA-256 hash values of email attachments",
+          "description": "Specify comma separated SHA-256 hash values of email attachments",
+          "tooltip": "Specify comma separated SHA-256 hash values of email attachments",
           "name": "file256hashes"
         }
       ],

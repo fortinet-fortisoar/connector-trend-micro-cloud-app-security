@@ -21,5 +21,7 @@ MAPPING = {
     "Account Revoke Signin Sessions": "ACCOUNT_REVOKE_SIGNIN_SESSIONS",
     "Mail Delete": "MAIL_DELETE",
     "Mail Quarantine": "MAIL_QUARANTINE",
-    "Mail Restore": "MAIL_RESTORE"
+    "Mail Restore": "MAIL_RESTORE",
+    "Office 365": "office365",
+    "Google": "google"
 }
