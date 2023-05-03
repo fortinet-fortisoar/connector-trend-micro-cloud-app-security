@@ -1,0 +1,878 @@
+{
+  "name": "trend-micro-cloud-app-security",
+  "label": "Trend Micro Cloud App Security",
+  "version": "1.0.0",
+  "description": "Trend Micro Cloud App Security provides advanced protection for the following cloud applications and services to enhance security with powerful enterprise-class threat and data protection control: Microsoft Office 365 services (Exchange Online, SharePoint Online, OneDrive, Microsoft Teams), Box, Dropbox, and Google Workspace (Google Drive, Gmail).Cloud App Security provides protection against ransomware, phishing, Business Email Compromise (BEC), zero-day and hidden malware, and unauthorized transmission of sensitive data. It integrates cloud-to-cloud with the protected applications and services to maintain high availability and administrative functionality.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "Cloud Security",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "value": "https://api.tmcas.trendmicro.com",
+        "description": "URL of the Trend Micro Cloud App Security server to which you will connect and perform the automated operations. The server URL is subject to the site where your Cloud App Security service is hosted for more information please refer https://docs.trendmicro.com/en-us/enterprise/cloud-app-security-integration-api-online-help/getting-started-with/understanding-the-ur.aspx",
+        "name": "server_url"
+      },
+      {
+        "title": "Authentication Token",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "description": "Specify the Authentication Token used to access the Trend Micro Cloud App Security APIs and perform automated operations.For information regarding token generation please refer https://docs.trendmicro.com/en-us/enterprise/cloud-app-security-integration-api-online-help/getting-started-with/generating-an-authen.aspx",
+        "name": "token"
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Get Security Logs",
+      "description": "Retrieves security event logs of the services that Cloud App Security protects.",
+      "operation": "get_security_logs",
+      "category": "investigation",
+      "annotation": "get_security_logs",
+      "parameters": [
+        {
+          "title": "Service",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "description": "Select the name of the protected service whose logs you want to retrieve.",
+          "name": "service",
+          "options": [
+            "Exchange",
+            "SharePoint",
+            "OneDrive",
+            "DropBox",
+            "Box",
+            "Google Drive",
+            "Gmail",
+            "Teams",
+            "Exchange Server",
+            "Salesforce Sandbox",
+            "Salesforce Production",
+            "Teams Chat"
+          ]
+        },
+        {
+          "title": "Event",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "description": "Select the security event whose logs you want to retrieve.",
+          "name": "event",
+          "options": [
+            "Security Risk",
+            "Virtual Analyzer",
+            "Ransomware",
+            "DLP"
+          ]
+        },
+        {
+          "title": "Start Date",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "Specify the start date during which logs are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "name": "start"
+        },
+        {
+          "title": "End Date",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "Specify the end date during which logs are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "name": "end"
+        },
+        {
+          "title": "Number Of Logs To Retrieve",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Number of log items to display at a time. A maximum of 500 log items are allowed.If not specified, the value is set to 500 by default.",
+          "tooltip": "Number of log items to display at a time. A maximum of 500 log items are allowed.If not specified, the value is set to 500 by default.",
+          "name": "limit"
+        },
+        {
+          "title": "Get All Pages",
+          "name": "get_all_pages",
+          "type": "checkbox",
+          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "description": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false
+        }
+      ],
+      "output_schema": {
+        "current_link": "",
+        "next_link": "",
+        "last_log_item_generation_time": "",
+        "security_events": [
+          {
+            "log_item_id": "",
+            "service": "",
+            "event": "",
+            "message": {
+              "scan_type": "",
+              "affected_user": "",
+              "location": "",
+              "detection_time": "",
+              "triggered_policy_name": "",
+              "triggered_security_filter": "",
+              "action": "",
+              "action_result": "",
+              "mail_message_id": "",
+              "mail_message_sender": "",
+              "mail_message_recipient": [],
+              "mail_message_submit_time": "",
+              "mail_message_delivery_time": "",
+              "mail_message_subject": "",
+              "mail_message_file_name": "",
+              "security_risk_name": "",
+              "detected_by": "",
+              "risk_level": ""
+            }
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get Virtual Analyzer Report",
+      "description": "Retrieves the summary report generated by Virtual Analyzer.",
+      "operation": "get_virtual_analyzer_report",
+      "category": "investigation",
+      "annotation": "get_virtual_analyzer_report",
+      "parameters": [
+        {
+          "title": "Report ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Specify the ID of the Virtual Analyzer report contained in the va_report_link field returned by the Get Security Log API.",
+          "name": "report_id"
+        }
+      ],
+      "output_schema": {},
+      "enabled": true
+    },
+    {
+      "title": "Get Quarantine Events",
+      "description": "Retrieves quarantine events of the services that Cloud App Security protects.",
+      "operation": "get_quarantine_events",
+      "category": "investigation",
+      "annotation": "get_quarantine_events",
+      "parameters": [
+        {
+          "title": "Service",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Name of the protected service whose quarantine events you want to retrieve.Currently, the value must be exchange.",
+          "name": "service"
+        },
+        {
+          "title": "Start Date",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "Specify the start date during which quarantine events are to retrieve. The request retrieves quarantine evens within a maximum of 7 days before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves quarantine events within one day before the point of time when the request is sent. If both start and end are specified, the request retrieves quarantine events within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves quarantine events within one day after the point of the configured start time. If only end is specified, the request retrieves quarantine events within one day before the point of the configured end time.",
+          "name": "start"
+        },
+        {
+          "title": "End Date",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "Specify the end date during which quarantine events are to retrieve. The request retrieves quarantine evens within a maximum of 7 days before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves quarantine events within one day before the point of time when the request is sent. If both start and end are specified, the request retrieves quarantine events within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves quarantine events within one day after the point of the configured start time. If only end is specified, the request retrieves quarantine events within one day before the point of the configured end time.",
+          "name": "end"
+        },
+        {
+          "title": "Number Of Quarantine Events To Retrieve",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Number of quarantine events to display at a time. A maximum of 500 log items are allowed.If not specified, the value is set to 500 by default.",
+          "tooltip": "Number of quarantine events to display at a time. A maximum of 500 log items are allowed.If not specified, the value is set to 500 by default.",
+          "name": "limit"
+        },
+        {
+          "title": "Get All Pages",
+          "name": "get_all_pages",
+          "type": "checkbox",
+          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "description": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false
+        }
+      ],
+      "output_schema": {
+        "traceId": "",
+        "current_link": "",
+        "next_link": "",
+        "last_log_item_generation_time": "",
+        "quarantine_events": [
+          {
+            "service": "",
+            "message": {
+              "affected_user": "",
+              "mailbox": "",
+              "detection_time": "",
+              "mail_unique_id": "",
+              "mail_log_id": "",
+              "mail_message_id": "",
+              "mail_message_delivery_time": "",
+              "mail_message_sender": "",
+              "mail_message_recipient": [],
+              "mail_message_subject": "",
+              "mail_status": "",
+              "location": "",
+              "mail_quarantine_type": "",
+              "triggered_security_filter": "",
+              "security_risk_name": ""
+            }
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get Email",
+      "description": "Searches email messages in Cloud App Security protected mailboxes for those that match meta information search criteria.",
+      "operation": "get_email",
+      "category": "investigation",
+      "annotation": "get_email",
+      "parameters": [
+        {
+          "title": "Mailbox",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Email address of the mailbox to search in Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com or user@ex*ample.com",
+          "name": "mailbox"
+        },
+        {
+          "title": "Last N Days",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Number of days (n × 24 hours) before the point of time when the request is sent, during which email messages are to search Cloud App Security saves the meta information of email messages in each mailbox for 90 days. Do not configure lastndays and start/end at the same time.",
+          "name": "lastndays"
+        },
+        {
+          "title": "Start Date",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "Specify the start date during which email message are to search. Cloud App Security saves the meta information of email messages for 90 days. The request searches email messages according to the start and end settings: If both start and end are not specified, the request searches email messages within seven days (7 × 24 hours) before the point of time when the request is sent. If both start and end are specified, the request searches email messages within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request searches email messages within seven days (7 × 24 hours) after the point of the configured start time. If only end is specified, the request searches email messages within seven days (7 × 24 hours) before the point of the configured end time. Do not configure lastndays and start/end at the same time.",
+          "name": "start"
+        },
+        {
+          "title": "End Date",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "Specify the end date during which email message are to search. Cloud App Security saves the meta information of email messages for 90 days. The request searches email messages according to the start and end settings: If both start and end are not specified, the request searches email messages within seven days (7 × 24 hours) before the point of time when the request is sent. If both start and end are specified, the request searches email messages within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request searches email messages within seven days (7 × 24 hours) after the point of the configured start time. If only end is specified, the request searches email messages within seven days (7 × 24 hours) before the point of the configured end time. Do not configure lastndays and start/end at the same time.",
+          "name": "end"
+        },
+        {
+          "title": "Subject",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Subject of email messages to search for",
+          "name": "subject"
+        },
+        {
+          "title": "File SHA1",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "SHA-1 hash value of the attachment file to search for Cloud App Security uses exact match. Type a complete and valid SHA-1 hash value.",
+          "name": "file_sha1"
+        },
+        {
+          "title": "File SHA256",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "SHA-256 hash value of the attachment file to search for Cloud App Security uses exact match. Type a complete and valid SHA-256 hash value.",
+          "name": "file_sha256"
+        },
+        {
+          "title": "File Name",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Name of the attachment file to search for Type the file name you want to search for, with or without a filename extension. Non-prefix wildcard is supported. Example: ex*ample",
+          "name": "file_name"
+        },
+        {
+          "title": "File Extension",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Filename extension of attachment files to search for Type the filename extension you want to search for, without a dot '.' Non-prefix wildcard is supported. Example: do*",
+          "name": "file_extension"
+        },
+        {
+          "title": "URL",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "URL in email body or attachments to search for",
+          "name": "url"
+        },
+        {
+          "title": "Sender",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Sender email address of email messages to search for Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com",
+          "name": "sender"
+        },
+        {
+          "title": "Recipient",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Recipient email address of email messages to search for Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com",
+          "name": "recipient"
+        },
+        {
+          "title": "Message ID",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Internet message ID of the email message to search for It can be obtained from Microsoft Graph API or EWS API.",
+          "name": "message_id"
+        },
+        {
+          "title": "Source IP",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Source IP address of email messages to search for An IP address with or without subnet mask is supported. Example: xx.yy.zz.ww or xx.yy.zz.ww/16",
+          "name": "source_ip"
+        },
+        {
+          "title": "Source Domain",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Source domain of email messages to search for Type a complete domain name. Non-prefix wildcard is supported. Example:ex*ample.com",
+          "name": "source_domain"
+        },
+        {
+          "title": "Number Of Email Messages To Retrieve",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Number of email messages whose meta information is to display at a time. A maximum of 1,000 email messages are allowed. If not specified, the value is set to 20 by default.",
+          "tooltip": "Number of email messages whose meta information is to display at a time. A maximum of 1,000 email messages are allowed. If not specified, the value is set to 20 by default.",
+          "name": "limit"
+        },
+        {
+          "title": "Get All Pages",
+          "name": "get_all_pages",
+          "type": "checkbox",
+          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "description": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false
+        }
+      ],
+      "output_schema": {
+        "current_Link": "",
+        "next_Link": "",
+        "value": [
+          {
+            "mail_attachments": [
+              {
+                "file_sha1": "",
+                "file_sha256": "",
+                "file_name": ""
+              }
+            ],
+            "mail_message_subject": "",
+            "mail_urls": [],
+            "mail_message_id": "",
+            "mail_unique_id": "",
+            "mailbox": "",
+            "source_ip": "",
+            "mail_message_sender": "",
+            "mail_internet_headers": [
+              {
+                "Value": "",
+                "HeaderName": ""
+              }
+            ],
+            "mail_message_recipient": [],
+            "source_domain": "",
+            "mail_message_delivery_time": "",
+            "org_id": "",
+            "service": ""
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "title": "Take Action On User",
+      "description": "Takes actions on a specified user accounts, including disabling a user account, requesting to enable multi-factor authentication (MFA) for a user account, requesting to reset password for a user account, and terminating all sign-in sessions of Microsoft services for a user account.",
+      "operation": "take_action_on_user",
+      "category": "investigation",
+      "annotation": "take_action_on_user",
+      "parameters": [
+        {
+          "title": "Action Type",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "description": "Action to take on a user account.",
+          "name": "action_type",
+          "options": [
+            "Account Disable",
+            "Account Enable MFA",
+            "Account Reset Password",
+            "Account Revoke Signin Sessions"
+          ]
+        },
+        {
+          "title": "Service",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Name of the protected service to which the API applies. Options include: exchange",
+          "name": "service"
+        },
+        {
+          "title": "Account Provider",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Provider of the protected service. Options include: office365",
+          "name": "account_provider"
+        },
+        {
+          "title": "Account User Email",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Email address used to create the user account",
+          "name": "account_user_email"
+        }
+      ],
+      "output_schema": {
+        "code": "",
+        "msg": "",
+        "batch_id": "",
+        "tracdId": ""
+      },
+      "enabled": true
+    },
+    {
+      "title": "Take Action On Email",
+      "description": "Takes actions on a specified email messages, including deleting an email message, quarantining an email message, and restoring a quarantined email message.",
+      "operation": "take_action_on_email",
+      "category": "investigation",
+      "annotation": "take_action_on_email",
+      "parameters": [
+        {
+          "title": "Action Type",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "description": "Action to take on a user account.For Gmail, only MAIL DELETE is supported. The MAIL RESTORE action is supported only for Exchange Online.",
+          "name": "action_type",
+          "options": [
+            "Mail Delete",
+            "Mail Quarantine",
+            "Mail Restore"
+          ]
+        },
+        {
+          "title": "Service",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "description": "Name of the protected service to which the API applies.",
+          "name": "service",
+          "options": [
+            "Exchange",
+            "Gmail"
+          ]
+        },
+        {
+          "title": "Account Provider",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "description": "Provider of the protected service.",
+          "name": "account_provider",
+          "options": [
+            "office365",
+            "google"
+          ]
+        },
+        {
+          "title": "Mail Box",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Email address of an email message to take action on",
+          "name": "mailbox"
+        },
+        {
+          "title": "Mail Message Id",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Internet message ID of an email message to take action on It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API.",
+          "name": "mail_message_id"
+        },
+        {
+          "title": "Mail Unique Id",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Unique ID of an email message to take action on It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API.",
+          "name": "mail_unique_id"
+        },
+        {
+          "title": "Mail Message Delivery Time",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "Date and time when an email message to take action on is sent It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API or EWS API.",
+          "name": "mail_message_delivery_time"
+        },
+        {
+          "title": "Detection Time",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "Date and time when the security event was detected It applies only to the MAIL_RESTORE action and can be obtained from the Cloud App Security Get Quarantine Events API.",
+          "name": "detection_time"
+        },
+        {
+          "title": "Mail Log Id",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "ID that uniquely identifies a log item It applies only to the MAIL_RESTORE action and can be obtained from the Cloud App Security Get Quarantine Events API.",
+          "name": "mail_log_id"
+        }
+      ],
+      "output_schema": {
+        "code": "",
+        "msg": "",
+        "batch_id": "",
+        "tracdId": ""
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get User Action Result",
+      "description": "Queries the results of actions on specified user accounts",
+      "operation": "get_user_action_result",
+      "category": "investigation",
+      "annotation": "get_user_action_result",
+      "parameters": [
+        {
+          "title": "Batch ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Unique ID of a Threat Mitigation request To query actions taken within a single request, use this parameter.",
+          "name": "batch_id"
+        },
+        {
+          "title": "Start Date",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "Start time during which action results are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "name": "start"
+        },
+        {
+          "title": "End Date",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "End time during which action results are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "name": "end"
+        },
+        {
+          "title": "Number Of Action Results To Retrieve",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Number of Action Results to display at a time. A maximum of 500 are allowed If not specified, the value is set to 500 by default.",
+          "tooltip": "Number of Action Results to display at a time. A maximum of 500 are allowed If not specified, the value is set to 500 by default..",
+          "name": "limit"
+        },
+        {
+          "title": "Get All Pages",
+          "name": "get_all_pages",
+          "type": "checkbox",
+          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "description": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false
+        }
+      ],
+      "output_schema": {
+        "count": 1,
+        "current_link": "",
+        "next_link": "",
+        "actions": [
+          {
+            "action_type": "",
+            "service": "",
+            "account_provider": "",
+            "account_user_email": "",
+            "action_id": "",
+            "batch_id": "",
+            "status": "",
+            "action_requested_at": "",
+            "action_executed_at": "",
+            "error_code": "",
+            "error_message": ""
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get Email Action Result",
+      "description": "Queries the results of actions on specified email messages",
+      "operation": "get_email_action_result",
+      "category": "investigation",
+      "annotation": "get_email_action_result",
+      "parameters": [
+        {
+          "title": "Batch ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Unique ID of a Threat Mitigation request To query actions taken within a single request, use this parameter.",
+          "name": "batch_id"
+        },
+        {
+          "title": "Start Date",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "Start time during which action results are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "name": "start"
+        },
+        {
+          "title": "End Date",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "description": "End time during which action results are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "name": "end"
+        },
+        {
+          "title": "Number Of Action Results To Retrieve",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "Number of Action Results to display at a time. A maximum of 500 are allowed If not specified, the value is set to 500 by default.",
+          "tooltip": "Number of Action Results to display at a time. A maximum of 500 are allowed If not specified, the value is set to 500 by default..",
+          "name": "limit"
+        },
+        {
+          "title": "Get All Pages",
+          "name": "get_all_pages",
+          "type": "checkbox",
+          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "description": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false
+        }
+      ],
+      "output_schema": {
+        "count": "",
+        "current_link": "",
+        "next_link": "",
+        "actions": [
+          {
+            "action_type": "",
+            "service": "",
+            "account_provider": "",
+            "account_user_email": "",
+            "action_id": "",
+            "batch_id": "",
+            "status": "",
+            "action_requested_at": "",
+            "action_executed_at": "",
+            "error_code": "",
+            "error_message": ""
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get Blocked List",
+      "description": "Retrieves all blocked senders, URLs, SHA-1 hash values, and SHA-256 hash values that the administrator has configured through this API on Cloud App Security to quarantine Exchange Online email messages.",
+      "operation": "get_blocked_list",
+      "category": "investigation",
+      "annotation": "get_blocked_list",
+      "parameters": [],
+      "output_schema": {
+        "code": "",
+        "message": "",
+        "rules": {
+          "senders": [],
+          "urls": [],
+          "filehashes": [],
+          "file256hashes": []
+        }
+      },
+      "enabled": true
+    },
+    {
+      "title": "Update Blocked List",
+      "description": "Adds or removes senders, URLs, SHA-1 hash values, and/or SHA-256 hash values to or from the blocked lists on Cloud App Security.",
+      "operation": "update_blocked_list",
+      "category": "investigation",
+      "annotation": "update_blocked_list",
+      "parameters": [
+        {
+          "title": "Action Type",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "description": "Add one or multiple email senders, URLs, SHA-1 hash values, and SHA-256 hash values to or remove them from the blocked lists.",
+          "name": "action_type",
+          "options": [
+            "create",
+            "delete"
+          ]
+        },
+        {
+          "title": "Senders",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "A csv of sending email addresses",
+          "name": "senders"
+        },
+        {
+          "title": "URL's",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "A csv of URLs included in email messages",
+          "name": "urls"
+        },
+        {
+          "title": "File Hashes",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "A csv of SHA-1 hash values of email attachments",
+          "name": "filehashes"
+        },
+        {
+          "title": "File SHA-256 Hashes",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "description": "A csv of SHA-256 hash values of email attachments",
+          "name": "file256hashes"
+        }
+      ],
+      "output_schema": {
+        "code": "",
+        "msg": ""
+      },
+      "enabled": true
+    }
+  ]
+}
