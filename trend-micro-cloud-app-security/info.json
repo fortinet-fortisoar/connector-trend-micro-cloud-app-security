@@ -58,6 +58,7 @@
           "visible": true,
           "type": "select",
           "description": "Select the name of the protected service whose logs you want to retrieve.",
+          "tooltip": "Select the name of the protected service whose logs you want to retrieve.",
           "name": "service",
           "options": [
             "Exchange",
@@ -75,12 +76,13 @@
           ]
         },
         {
-          "title": "Event",
+          "title": "Event Type",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "select",
           "description": "Select the security event whose logs you want to retrieve.",
+          "tooltip": "Select the security event whose logs you want to retrieve.",
           "name": "event",
           "options": [
             "Security Risk",
@@ -177,6 +179,7 @@
           "visible": true,
           "type": "text",
           "description": "Specify the ID of the Virtual Analyzer report contained in the va_report_link field returned by the Get Security Log API.",
+          "tooltip": "Specify the ID of the Virtual Analyzer report contained in the va_report_link field returned by the Get Security Log API.",
           "name": "report_id"
         }
       ],
@@ -196,6 +199,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Name of the protected service whose quarantine events you want to retrieve.Currently, the value must be exchange.",
           "description": "Name of the protected service whose quarantine events you want to retrieve.Currently, the value must be exchange.",
           "name": "service"
         },
@@ -282,6 +286,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Email address of the mailbox to search in Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com or user@ex*ample.com",
           "description": "Email address of the mailbox to search in Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com or user@ex*ample.com",
           "name": "mailbox"
         },
@@ -291,6 +296,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Number of days (n × 24 hours) before the point of time when the request is sent, during which email messages are to search Cloud App Security saves the meta information of email messages in each mailbox for 90 days. Do not configure lastndays and start/end at the same time.",
           "description": "Number of days (n × 24 hours) before the point of time when the request is sent, during which email messages are to search Cloud App Security saves the meta information of email messages in each mailbox for 90 days. Do not configure lastndays and start/end at the same time.",
           "name": "lastndays"
         },
@@ -318,6 +324,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Subject of email messages to search for",
           "description": "Subject of email messages to search for",
           "name": "subject"
         },
@@ -345,6 +352,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Name of the attachment file to search for Type the file name you want to search for, with or without a filename extension. Non-prefix wildcard is supported. Example: ex*ample",
           "description": "Name of the attachment file to search for Type the file name you want to search for, with or without a filename extension. Non-prefix wildcard is supported. Example: ex*ample",
           "name": "file_name"
         },
@@ -354,6 +362,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Filename extension of attachment files to search for Type the filename extension you want to search for, without a dot '.' Non-prefix wildcard is supported. Example: do*",
           "description": "Filename extension of attachment files to search for Type the filename extension you want to search for, without a dot '.' Non-prefix wildcard is supported. Example: do*",
           "name": "file_extension"
         },
@@ -363,6 +372,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "URL in email body or attachments to search for",
           "description": "URL in email body or attachments to search for",
           "name": "url"
         },
@@ -372,6 +382,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Sender email address of email messages to search for Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com",
           "description": "Sender email address of email messages to search for Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com",
           "name": "sender"
         },
@@ -381,6 +392,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Recipient email address of email messages to search for Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com",
           "description": "Recipient email address of email messages to search for Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com",
           "name": "recipient"
         },
@@ -390,6 +402,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Internet message ID of the email message to search for It can be obtained from Microsoft Graph API or EWS API.",
           "description": "Internet message ID of the email message to search for It can be obtained from Microsoft Graph API or EWS API.",
           "name": "message_id"
         },
@@ -399,6 +412,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Source IP address of email messages to search for An IP address with or without subnet mask is supported. Example: xx.yy.zz.ww or xx.yy.zz.ww/16",
           "description": "Source IP address of email messages to search for An IP address with or without subnet mask is supported. Example: xx.yy.zz.ww or xx.yy.zz.ww/16",
           "name": "source_ip"
         },
@@ -408,6 +422,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Source domain of email messages to search for Type a complete domain name. Non-prefix wildcard is supported. Example:ex*ample.com",
           "description": "Source domain of email messages to search for Type a complete domain name. Non-prefix wildcard is supported. Example:ex*ample.com",
           "name": "source_domain"
         },
@@ -481,6 +496,7 @@
           "editable": true,
           "visible": true,
           "type": "select",
+          "tooltip": "Action to take on a user account.",
           "description": "Action to take on a user account.",
           "name": "action_type",
           "options": [
@@ -497,6 +513,7 @@
           "visible": true,
           "type": "text",
           "description": "Name of the protected service to which the API applies. Options include: exchange",
+          "tooltip": "Name of the protected service to which the API applies. Options include: exchange",
           "name": "service"
         },
         {
@@ -506,6 +523,7 @@
           "visible": true,
           "type": "text",
           "description": "Provider of the protected service. Options include: office365",
+          "tooltip": "Provider of the protected service. Options include: office365",
           "name": "account_provider"
         },
         {
@@ -515,6 +533,7 @@
           "visible": true,
           "type": "text",
           "description": "Email address used to create the user account",
+          "tooltip": "Email address used to create the user account",
           "name": "account_user_email"
         }
       ],
@@ -539,6 +558,7 @@
           "editable": true,
           "visible": true,
           "type": "select",
+          "tooltip": "Action to take on a user account.For Gmail, only MAIL DELETE is supported. The MAIL RESTORE action is supported only for Exchange Online.",
           "description": "Action to take on a user account.For Gmail, only MAIL DELETE is supported. The MAIL RESTORE action is supported only for Exchange Online.",
           "name": "action_type",
           "options": [
@@ -553,6 +573,7 @@
           "editable": true,
           "visible": true,
           "type": "select",
+          "tooltip": "Name of the protected service to which the API applies.",
           "description": "Name of the protected service to which the API applies.",
           "name": "service",
           "options": [
@@ -566,6 +587,7 @@
           "editable": true,
           "visible": true,
           "type": "select",
+          "tooltip": "Provider of the protected service.",
           "description": "Provider of the protected service.",
           "name": "account_provider",
           "options": [
@@ -579,24 +601,27 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Email address of an email message to take action on",
           "description": "Email address of an email message to take action on",
           "name": "mailbox"
         },
         {
-          "title": "Mail Message Id",
+          "title": "Mail Message ID",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Internet message ID of an email message to take action on It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API.",
           "description": "Internet message ID of an email message to take action on It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API.",
           "name": "mail_message_id"
         },
         {
-          "title": "Mail Unique Id",
+          "title": "Mail Unique ID",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Unique ID of an email message to take action on It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API.",
           "description": "Unique ID of an email message to take action on It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API.",
           "name": "mail_unique_id"
         },
@@ -606,6 +631,7 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
+          "tooltip": "Date and time when an email message to take action on is sent It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API or EWS API.",
           "description": "Date and time when an email message to take action on is sent It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API or EWS API.",
           "name": "mail_message_delivery_time"
         },
@@ -615,15 +641,17 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
+          "tooltip": "Date and time when the security event was detected It applies only to the MAIL_RESTORE action and can be obtained from the Cloud App Security Get Quarantine Events API.",
           "description": "Date and time when the security event was detected It applies only to the MAIL_RESTORE action and can be obtained from the Cloud App Security Get Quarantine Events API.",
           "name": "detection_time"
         },
         {
-          "title": "Mail Log Id",
+          "title": "Mail Log ID",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "ID that uniquely identifies a log item It applies only to the MAIL_RESTORE action and can be obtained from the Cloud App Security Get Quarantine Events API.",
           "description": "ID that uniquely identifies a log item It applies only to the MAIL_RESTORE action and can be obtained from the Cloud App Security Get Quarantine Events API.",
           "name": "mail_log_id"
         }
@@ -649,6 +677,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Unique ID of a Threat Mitigation request To query actions taken within a single request, use this parameter.",
           "description": "Unique ID of a Threat Mitigation request To query actions taken within a single request, use this parameter.",
           "name": "batch_id"
         },
@@ -671,7 +700,7 @@
           "name": "end"
         },
         {
-          "title": "Number Of Action Results To Retrieve",
+          "title": "Number Of Results To Retrieve",
           "required": false,
           "editable": true,
           "visible": true,
@@ -693,7 +722,7 @@
         }
       ],
       "output_schema": {
-        "count": 1,
+        "count": "",
         "current_link": "",
         "next_link": "",
         "actions": [
@@ -727,6 +756,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
+          "tooltip": "Unique ID of a Threat Mitigation request To query actions taken within a single request, use this parameter.",
           "description": "Unique ID of a Threat Mitigation request To query actions taken within a single request, use this parameter.",
           "name": "batch_id"
         },
@@ -852,7 +882,7 @@
           "name": "urls"
         },
         {
-          "title": "File Hashes",
+          "title": "File SHA-1 Hashes",
           "required": false,
           "editable": true,
           "visible": true,
