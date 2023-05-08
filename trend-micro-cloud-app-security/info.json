@@ -700,7 +700,7 @@
           "name": "end"
         },
         {
-          "title": "Number Of Results To Retrieve",
+          "title": "Number Of Records To Retrieve",
           "required": false,
           "editable": true,
           "visible": true,
@@ -779,7 +779,7 @@
           "name": "end"
         },
         {
-          "title": "Number Of Action Results To Retrieve",
+          "title": "Number Of Records To Retrieve",
           "required": false,
           "editable": true,
           "visible": true,
