@@ -666,7 +666,7 @@
     },
     {
       "title": "Get User Action Result",
-      "description": "Queries the results of actions on specified user accounts",
+      "description": "Queries the result of action on specified user account",
       "operation": "get_user_action_result",
       "category": "investigation",
       "annotation": "get_user_action_result",
@@ -677,8 +677,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Unique ID of a Threat Mitigation request To query actions taken within a single request, use this parameter.",
-          "description": "Unique ID of a Threat Mitigation request To query actions taken within a single request, use this parameter.",
+          "tooltip": "Specify the batch ID to fetch the user action result from Trend Micro Cloud App Security Server.",
+          "description": "Specify the batch ID to fetch the user action result from Trend Micro Cloud App Security Server.",
           "name": "batch_id"
         },
         {
@@ -745,7 +745,7 @@
     },
     {
       "title": "Get Email Action Result",
-      "description": "Queries the results of actions on specified email messages",
+      "description": "Queries the result of action on specified email message",
       "operation": "get_email_action_result",
       "category": "investigation",
       "annotation": "get_email_action_result",
@@ -756,8 +756,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Unique ID of a Threat Mitigation request To query actions taken within a single request, use this parameter.",
-          "description": "Unique ID of a Threat Mitigation request To query actions taken within a single request, use this parameter.",
+          "tooltip": "Specify the batch ID to fetch the email action result from Trend Micro Cloud App Security Server.",
+          "description": "Specify the batch ID to fetch the email action result from Trend Micro Cloud App Security Server.",
           "name": "batch_id"
         },
         {
@@ -854,7 +854,7 @@
           "editable": true,
           "visible": true,
           "type": "select",
-          "description": "Add one or multiple email senders, URLs, SHA-1 hash values, and SHA-256 hash values to or remove them from the blocked lists.",
+          "description": "Specify the action type which you want to perform on blocked list.",
           "name": "action_type",
           "options": [
             "create",
