@@ -9,7 +9,7 @@
   "category": "Cloud Security",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/trend-micro-cloud-app-security/584/trend-micro-cloud-app-security-v1-0-0",
   "configuration": {
     "fields": [
       {
@@ -97,7 +97,7 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "description": "Specify the start date during which logs are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "description": "Select the start date of the duration for which to retrieve the logs. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If neither start nor end is specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
           "name": "start"
         },
         {
@@ -106,7 +106,7 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "description": "Specify the end date during which logs are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "description": "Select the end date of the duration for which to retrieve the logs. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If neither start nor end is specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
           "name": "end"
         },
         {
@@ -115,16 +115,16 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Number of log items to display at a time. A maximum of 500 log items are allowed.If not specified, the value is set to 500 by default.",
-          "tooltip": "Number of log items to display at a time. A maximum of 500 log items are allowed.If not specified, the value is set to 500 by default.",
+          "description": "Specify the count of log items to display at a time. A maximum of 500 log items are allowed. The default value is set to 500. ",
+          "tooltip": "Specify the count of log items to display at a time. A maximum of 500 log items are allowed. The default value is set to 500. ",
           "name": "limit"
         },
         {
           "title": "Get All Pages",
           "name": "get_all_pages",
           "type": "checkbox",
-          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
-          "description": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "tooltip": "Select this checkbox to fetch all pages, i.e. return all available records.",
+          "description": "Select this checkbox to fetch all pages, i.e. return all available records.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -178,8 +178,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Specify the ID of the Virtual Analyzer report contained in the va_report_link field returned by the Get Security Log API.",
-          "tooltip": "Specify the ID of the Virtual Analyzer report contained in the va_report_link field returned by the Get Security Log API.",
+          "description": "Specify the ID of the Virtual Analyzer report contained in the va_report_link field returned by the Get Security Log action.",
+          "tooltip": "Specify the ID of the Virtual Analyzer report contained in the va_report_link field returned by the Get Security Log action.",
           "name": "report_id"
         }
       ],
@@ -199,8 +199,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Name of the protected service whose quarantine events you want to retrieve.Currently, the value must be exchange.",
-          "description": "Name of the protected service whose quarantine events you want to retrieve.Currently, the value must be exchange.",
+          "tooltip": "Specify the name of the protected service to retrieve its quarantined events. Currently, only exchange as a value is supported. ",
+          "description": "Specify the name of the protected service to retrieve its quarantined events. Currently, only exchange as a value is supported. ",
           "name": "service"
         },
         {
@@ -209,7 +209,7 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "description": "Specify the start date during which quarantine events are to retrieve. The request retrieves quarantine evens within a maximum of 7 days before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves quarantine events within one day before the point of time when the request is sent. If both start and end are specified, the request retrieves quarantine events within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves quarantine events within one day after the point of the configured start time. If only end is specified, the request retrieves quarantine events within one day before the point of the configured end time.",
+          "description": "Select the start date of the duration for which to retrieve the quarantined events. The request retrieves quarantine evens within a maximum of 7 days before the point of time when the request is sent according to the start and end settings: If neither start nor end is specified, the request retrieves quarantine events within one day before the point of time when the request is sent. If both start and end are specified, the request retrieves quarantine events within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves quarantine events within one day after the point of the configured start time. If only end is specified, the request retrieves quarantine events within one day before the point of the configured end time.",
           "name": "start"
         },
         {
@@ -218,7 +218,7 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "description": "Specify the end date during which quarantine events are to retrieve. The request retrieves quarantine evens within a maximum of 7 days before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves quarantine events within one day before the point of time when the request is sent. If both start and end are specified, the request retrieves quarantine events within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves quarantine events within one day after the point of the configured start time. If only end is specified, the request retrieves quarantine events within one day before the point of the configured end time.",
+          "description": "Select the start date of the duration for which to retrieve the quarantined events. The request retrieves quarantine evens within a maximum of 7 days before the point of time when the request is sent according to the start and end settings: If neither start nor end is specified, the request retrieves quarantine events within one day before the point of time when the request is sent. If both start and end are specified, the request retrieves quarantine events within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves quarantine events within one day after the point of the configured start time. If only end is specified, the request retrieves quarantine events within one day before the point of the configured end time.",
           "name": "end"
         },
         {
@@ -227,16 +227,16 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Number of quarantine events to display at a time. A maximum of 500 log items are allowed.If not specified, the value is set to 500 by default.",
-          "tooltip": "Number of quarantine events to display at a time. A maximum of 500 log items are allowed.If not specified, the value is set to 500 by default.",
+          "description": "Specify the count of quarantined events to display at a time. A maximum of 500 log items are allowed. The default value is set to 500. ",
+          "tooltip": "Specify the count of quarantined events to display at a time. A maximum of 500 log items are allowed. The default value is set to 500. ",
           "name": "limit"
         },
         {
           "title": "Get All Pages",
           "name": "get_all_pages",
           "type": "checkbox",
-          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
-          "description": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "tooltip": "Select this checkbox to fetch all pages, i.e. return all available records.",
+          "description": "Select this checkbox to fetch all pages, i.e. return all available records.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -286,8 +286,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Email address of the mailbox to search in Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com or user@ex*ample.com",
-          "description": "Email address of the mailbox to search in Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com or user@ex*ample.com",
+          "tooltip": "Specify the complete email address of the mailbox in which to search. The meta information search criteria are specified in subsequent parameters. Non-prefix wildcard is supported. For example: u*ser@example.com or user@ex*ample.com ",
+          "description": "Specify the complete email address of the mailbox in which to search. The meta information search criteria are specified in subsequent parameters. Non-prefix wildcard is supported. For example: u*ser@example.com or user@ex*ample.com ",
           "name": "mailbox"
         },
         {
@@ -296,8 +296,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Number of days (n × 24 hours) before the point of time when the request is sent, during which email messages are to search Cloud App Security saves the meta information of email messages in each mailbox for 90 days. Do not configure lastndays and start/end at the same time.",
-          "description": "Number of days (n × 24 hours) before the point of time when the request is sent, during which email messages are to search Cloud App Security saves the meta information of email messages in each mailbox for 90 days. Do not configure lastndays and start/end at the same time.",
+          "tooltip": "Specify the count of days (n x 24 hours) for the duration in which to search the email messages. Cloud App Security saves the meta information of email messages in each mailbox for 90 days. \nNOTE: Do not configure Last N Days and Start/End Date at the same time. ",
+          "description": "Specify the count of days (n x 24 hours) for the duration in which to search the email messages. Cloud App Security saves the meta information of email messages in each mailbox for 90 days. \nNOTE: Do not configure Last N Days and Start/End Date at the same time. ",
           "name": "lastndays"
         },
         {
@@ -306,7 +306,7 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "description": "Specify the start date during which email message are to search. Cloud App Security saves the meta information of email messages for 90 days. The request searches email messages according to the start and end settings: If both start and end are not specified, the request searches email messages within seven days (7 × 24 hours) before the point of time when the request is sent. If both start and end are specified, the request searches email messages within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request searches email messages within seven days (7 × 24 hours) after the point of the configured start time. If only end is specified, the request searches email messages within seven days (7 × 24 hours) before the point of the configured end time. Do not configure lastndays and start/end at the same time.",
+          "description": "Select the start date of the duration for which to search the email message. Cloud App Security saves the meta information of email messages for 90 days. The request searches email messages according to the start and end settings: If neither start nor end is specified, the request searches email messages within seven days (7 × 24 hours) before the point of time when the request is sent. If both start and end are specified, the request searches email messages within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request searches email messages within seven days (7 × 24 hours) after the point of the configured start time. If only end is specified, the request searches email messages within seven days (7 × 24 hours) before the point of the configured end time. Do not configure lastndays and start/end at the same time.",
           "name": "start"
         },
         {
@@ -315,7 +315,7 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "description": "Specify the end date during which email message are to search. Cloud App Security saves the meta information of email messages for 90 days. The request searches email messages according to the start and end settings: If both start and end are not specified, the request searches email messages within seven days (7 × 24 hours) before the point of time when the request is sent. If both start and end are specified, the request searches email messages within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request searches email messages within seven days (7 × 24 hours) after the point of the configured start time. If only end is specified, the request searches email messages within seven days (7 × 24 hours) before the point of the configured end time. Do not configure lastndays and start/end at the same time.",
+          "description": "Select the start date of the duration for which to search the email message. Cloud App Security saves the meta information of email messages for 90 days. The request searches email messages according to the start and end settings: If neither start nor end is specified, the request searches email messages within seven days (7 × 24 hours) before the point of time when the request is sent. If both start and end are specified, the request searches email messages within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request searches email messages within seven days (7 × 24 hours) after the point of the configured start time. If only end is specified, the request searches email messages within seven days (7 × 24 hours) before the point of the configured end time. Do not configure lastndays and start/end at the same time.",
           "name": "end"
         },
         {
@@ -324,8 +324,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Subject of email messages to search for",
-          "description": "Subject of email messages to search for",
+          "tooltip": "Specify the subject of email messages to search. ",
+          "description": "Specify the subject of email messages to search. ",
           "name": "subject"
         },
         {
@@ -334,7 +334,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "SHA-1 hash value of the attachment file to search for Cloud App Security uses exact match. Type a complete and valid SHA-1 hash value.",
+          "description": "Specify the SHA-1 hash value of the attachment file to search. Cloud App Security uses exact match. Type a complete and a valid SHA-1 hash value. ",
           "name": "file_sha1"
         },
         {
@@ -343,7 +343,7 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "SHA-256 hash value of the attachment file to search for Cloud App Security uses exact match. Type a complete and valid SHA-256 hash value.",
+          "description": "Specify the SHA-256 hash value of the attachment file to search. Cloud App Security uses exact match. Type a complete and a valid SHA-256 hash value. ",
           "name": "file_sha256"
         },
         {
@@ -352,8 +352,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Name of the attachment file to search for Type the file name you want to search for, with or without a filename extension. Non-prefix wildcard is supported. Example: ex*ample",
-          "description": "Name of the attachment file to search for Type the file name you want to search for, with or without a filename extension. Non-prefix wildcard is supported. Example: ex*ample",
+          "tooltip": "Specify the name of the attachment file to search, with or without a filename extension. Non-prefix wildcard is supported. For example: ex*ample ",
+          "description": "Specify the name of the attachment file to search, with or without a filename extension. Non-prefix wildcard is supported. For example: ex*ample ",
           "name": "file_name"
         },
         {
@@ -363,7 +363,7 @@
           "visible": true,
           "type": "text",
           "tooltip": "Filename extension of attachment files to search for Type the filename extension you want to search for, without a dot '.' Non-prefix wildcard is supported. Example: do*",
-          "description": "Filename extension of attachment files to search for Type the filename extension you want to search for, without a dot '.' Non-prefix wildcard is supported. Example: do*",
+          "description": "Specify the extension of attachment files to search, without a dot(.). Non-prefix wildcard is supported. For example: ex*ample ",
           "name": "file_extension"
         },
         {
@@ -372,8 +372,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "URL in email body or attachments to search for",
-          "description": "URL in email body or attachments to search for",
+          "tooltip": "Specify the URL to search in the email body or attachments. ",
+          "description": "Specify the URL to search in the email body or attachments. ",
           "name": "url"
         },
         {
@@ -382,8 +382,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Sender email address of email messages to search for Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com",
-          "description": "Sender email address of email messages to search for Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com",
+          "tooltip": "Specify the sender's email address to search. Type a complete email address. Non-prefix wildcard is supported. For example: u*ser@example.com ",
+          "description": "Specify the sender's email address to search. Type a complete email address. Non-prefix wildcard is supported. For example: u*ser@example.com ",
           "name": "sender"
         },
         {
@@ -392,8 +392,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Recipient email address of email messages to search for Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com",
-          "description": "Recipient email address of email messages to search for Type a complete email address. Non-prefix wildcard is supported. Example: u*ser@example.com",
+          "tooltip": "Specify the recipient's email address to search. Type a complete email address. Non-prefix wildcard is supported. For example: u*ser@example.com ",
+          "description": "Specify the recipient's email address to search. Type a complete email address. Non-prefix wildcard is supported. For example: u*ser@example.com ",
           "name": "recipient"
         },
         {
@@ -402,8 +402,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Internet message ID of the email message to search for It can be obtained from Microsoft Graph API or EWS API.",
-          "description": "Internet message ID of the email message to search for It can be obtained from Microsoft Graph API or EWS API.",
+          "tooltip": "Specify the internet message ID of the email message to search. It can be obtained from Microsoft Graph API or EWS API. ",
+          "description": "Specify the internet message ID of the email message to search. It can be obtained from Microsoft Graph API or EWS API. ",
           "name": "message_id"
         },
         {
@@ -412,8 +412,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Source IP address of email messages to search for An IP address with or without subnet mask is supported. Example: xx.yy.zz.ww or xx.yy.zz.ww/16",
-          "description": "Source IP address of email messages to search for An IP address with or without subnet mask is supported. Example: xx.yy.zz.ww or xx.yy.zz.ww/16",
+          "tooltip": "Specify the source IP address of email messages to search. An IP address with or without subnet mask is supported. For example: xx.yy.zz.ww or xx.yy.zz.ww/16 ",
+          "description": "Specify the source IP address of email messages to search. An IP address with or without subnet mask is supported. For example: xx.yy.zz.ww or xx.yy.zz.ww/16 ",
           "name": "source_ip"
         },
         {
@@ -422,8 +422,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Source domain of email messages to search for Type a complete domain name. Non-prefix wildcard is supported. Example:ex*ample.com",
-          "description": "Source domain of email messages to search for Type a complete domain name. Non-prefix wildcard is supported. Example:ex*ample.com",
+          "tooltip": "Specify the source domain of email messages to search. Type a complete domain name. Non-prefix wildcard is supported. For example: ex*ample.com ",
+          "description": "Specify the source domain of email messages to search. Type a complete domain name. Non-prefix wildcard is supported. For example: ex*ample.com ",
           "name": "source_domain"
         },
         {
@@ -432,16 +432,16 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Number of email messages whose meta information is to display at a time. A maximum of 1,000 email messages are allowed. If not specified, the value is set to 20 by default.",
-          "tooltip": "Number of email messages whose meta information is to display at a time. A maximum of 1,000 email messages are allowed. If not specified, the value is set to 20 by default.",
+          "description": "Specify the count of email messages whose meta information to display at a time. A maximum of 1,000 email messages are allowed. The value is set to 20 by default. ",
+          "tooltip": "Specify the count of email messages whose meta information to display at a time. A maximum of 1,000 email messages are allowed. The value is set to 20 by default. ",
           "name": "limit"
         },
         {
           "title": "Get All Pages",
           "name": "get_all_pages",
           "type": "checkbox",
-          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
-          "description": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "tooltip": "Select this checkbox to fetch all pages, i.e. return all available records. ",
+          "description": "Select this checkbox to fetch all pages, i.e. return all available records. ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -496,8 +496,8 @@
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Action to take on a user account.",
-          "description": "Action to take on a user account.",
+          "tooltip": "Select an action to take on a user account.",
+          "description": "Select an action to take on a user account.",
           "name": "action_type",
           "options": [
             "Account Disable",
@@ -512,8 +512,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Name of the protected service to which the API applies. Options include: exchange",
-          "tooltip": "Name of the protected service to which the API applies. Options include: exchange",
+          "description": "Specify the name of the protected service to which the API applies. Options include: exchange. ",
+          "tooltip": "Specify the name of the protected service to which the API applies. Options include: exchange. ",
           "name": "service"
         },
         {
@@ -522,8 +522,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Provider of the protected service. Options include: office365",
-          "tooltip": "Provider of the protected service. Options include: office365",
+          "description": "Specify the provider of the protected service. Options include: office365. ",
+          "tooltip": "Specify the provider of the protected service. Options include: office365. ",
           "name": "account_provider"
         },
         {
@@ -532,8 +532,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Email address used to create the user account",
-          "tooltip": "Email address used to create the user account",
+          "description": "Specify the email address used to create the user account. ",
+          "tooltip": "Specify the email address used to create the user account. ",
           "name": "account_user_email"
         }
       ],
@@ -558,8 +558,8 @@
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Action to take on a user account.For Gmail, only MAIL DELETE is supported. The MAIL RESTORE action is supported only for Exchange Online.",
-          "description": "Action to take on a user account.For Gmail, only MAIL DELETE is supported. The MAIL RESTORE action is supported only for Exchange Online.",
+          "tooltip": "Specify the action to take on a user account.For Gmail, only MAIL DELETE is supported. The MAIL RESTORE action is supported only for Exchange Online.",
+          "description": "Specify the action to take on a user account.For Gmail, only MAIL DELETE is supported. The MAIL RESTORE action is supported only for Exchange Online.",
           "name": "action_type",
           "options": [
             "Mail Delete",
@@ -573,8 +573,8 @@
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Name of the protected service to which the API applies.",
-          "description": "Name of the protected service to which the API applies.",
+          "tooltip": "Specify the name of the protected service to which the API applies. ",
+          "description": "Specify the name of the protected service to which the API applies. ",
           "name": "service",
           "options": [
             "Exchange",
@@ -587,8 +587,8 @@
           "editable": true,
           "visible": true,
           "type": "select",
-          "tooltip": "Provider of the protected service.",
-          "description": "Provider of the protected service.",
+          "tooltip": "Specify the provider of the protected service. ",
+          "description": "Specify the provider of the protected service. ",
           "name": "account_provider",
           "options": [
             "Office 365",
@@ -601,8 +601,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Email address of an email message to take action on",
-          "description": "Email address of an email message to take action on",
+          "tooltip": "Specify the email address of the email message to take action. ",
+          "description": "Specify the email address of the email message to take action. ",
           "name": "mailbox"
         },
         {
@@ -611,8 +611,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Internet message ID of an email message to take action on It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API.",
-          "description": "Internet message ID of an email message to take action on It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API.",
+          "tooltip": "Specify the internet message ID of an email message to take action. It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API. ",
+          "description": "Specify the internet message ID of an email message to take action. It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API. ",
           "name": "mail_message_id"
         },
         {
@@ -621,8 +621,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "Unique ID of an email message to take action on It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API.",
-          "description": "Unique ID of an email message to take action on It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API.",
+          "tooltip": "Specify the unique ID of an email message to take action. It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API. ",
+          "description": "Specify the unique ID of an email message to take action. It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API. ",
           "name": "mail_unique_id"
         },
         {
@@ -631,8 +631,8 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "tooltip": "Date and time when an email message to take action on is sent It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API or EWS API.",
-          "description": "Date and time when an email message to take action on is sent It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API or EWS API.",
+          "tooltip": "Specify the date and time when an email message was sent. It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API. ",
+          "description": "Specify the date and time when an email message was sent. It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API. ",
           "name": "mail_message_delivery_time"
         },
         {
@@ -641,8 +641,8 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "tooltip": "Date and time when the security event was detected It applies only to the MAIL_RESTORE action and can be obtained from the Cloud App Security Get Quarantine Events API.",
-          "description": "Date and time when the security event was detected It applies only to the MAIL_RESTORE action and can be obtained from the Cloud App Security Get Quarantine Events API.",
+          "tooltip": "Specify the date and time when the security event was detected. It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API and applies only to the MAIL_RESTORE API action. ",
+          "description": "Specify the date and time when the security event was detected. It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security or the Microsoft Graph API and applies only to the MAIL_RESTORE API action. ",
           "name": "detection_time"
         },
         {
@@ -651,8 +651,8 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "tooltip": "ID that uniquely identifies a log item It applies only to the MAIL_RESTORE action and can be obtained from the Cloud App Security Get Quarantine Events API.",
-          "description": "ID that uniquely identifies a log item It applies only to the MAIL_RESTORE action and can be obtained from the Cloud App Security Get Quarantine Events API.",
+          "tooltip": "Specify the ID that uniquely identifies a log item. It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security and applies only to the MAIL_RESTORE API action. ",
+          "description": "Specify the ID that uniquely identifies a log item. It can be obtained from the Get Email or Get Quarantine Events API of Cloud App Security and applies only to the MAIL_RESTORE API action. ",
           "name": "mail_log_id"
         }
       ],
@@ -687,7 +687,7 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "description": "Start time during which action results are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "description": "Select the start date of the duration for which to retrieve the action results. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If neither start nor end is specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
           "name": "start"
         },
         {
@@ -696,7 +696,7 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "description": "End time during which action results are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "description": "Select the start date of the duration for which to retrieve the action results. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If neither start nor end is specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
           "name": "end"
         },
         {
@@ -705,16 +705,16 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Number of Action Results to display at a time. A maximum of 500 are allowed If not specified, the value is set to 500 by default.",
-          "tooltip": "Number of Action Results to display at a time. A maximum of 500 are allowed If not specified, the value is set to 500 by default..",
+          "description": "Specify the count of action results to display at a time. A maximum of 500 log items are allowed. The default value is set to 500. ",
+          "tooltip": "Specify the count of action results to display at a time. A maximum of 500 log items are allowed. The default value is set to 500. ",
           "name": "limit"
         },
         {
           "title": "Get All Pages",
           "name": "get_all_pages",
           "type": "checkbox",
-          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
-          "description": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "tooltip": "Select this checkbox to fetch all pages, i.e. return all available records. ",
+          "description": "Select this checkbox to fetch all pages, i.e. return all available records. ",
           "required": false,
           "editable": true,
           "visible": true,
@@ -766,7 +766,7 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "description": "Start time during which action results are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "description": "Select the start date of the duration for which to retrieve the action results. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If neither start nor end is specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
           "name": "start"
         },
         {
@@ -775,7 +775,7 @@
           "editable": true,
           "visible": true,
           "type": "datetime",
-          "description": "End time during which action results are to retrieve. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If both start and end are not specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
+          "description": "Select the start date of the duration for which to retrieve the action results. The request retrieves logs within a maximum of 72 hours before the point of time when the request is sent according to the start and end settings: If neither start nor end is specified, the request retrieves logs within five minutes before the point of time when the request is sent. If both start and end are specified, the request retrieves logs within the configured duration. Make sure the end time is no earlier than the start time. If only start is specified, the request retrieves logs within five minutes after the point of the configured start time. If only end is specified, the request retrieves logs within five minutes before the point of the configured end time.",
           "name": "end"
         },
         {
@@ -784,16 +784,16 @@
           "editable": true,
           "visible": true,
           "type": "text",
-          "description": "Number of Action Results to display at a time. A maximum of 500 are allowed If not specified, the value is set to 500 by default.",
-          "tooltip": "Number of Action Results to display at a time. A maximum of 500 are allowed If not specified, the value is set to 500 by default..",
+          "description": "Specify the count of action results to display at a time. A maximum of 500 log items are allowed. The default value is set to 500. ",
+          "tooltip": "Specify the count of action results to display at a time. A maximum of 500 log items are allowed. The default value is set to 500. ",
           "name": "limit"
         },
         {
           "title": "Get All Pages",
           "name": "get_all_pages",
           "type": "checkbox",
-          "tooltip": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
-          "description": "If you select this option, i.e., set it to true, all pages will be fetched so the action will return all available records.",
+          "tooltip": "Select this checkbox to fetch all pages, i.e. return all available records.",
+          "description": "Select this checkbox to fetch all pages, i.e. return all available records.",
           "required": false,
           "editable": true,
           "visible": true,
